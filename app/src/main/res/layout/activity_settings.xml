@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/ll_settings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@drawable/foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notifications"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"/>
+        <LinearLayout
+            android:id="@+id/ll_push_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/list_item_latest"
+            android:clickable="true"
+            android:focusable="true">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/tv_notifications_push"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/list_item_latest"
+                android:checked="true"
+                android:clickable="true"
+                android:drawablePadding="30dp"
+                android:focusable="true"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp"
+                android:text="Push Notifications"
+                android:textSize="18sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:text="Enable push notification"
+            android:paddingLeft="20dp"
+            android:paddingBottom="20dp"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+    <LinearLayout
+        android:id="@+id/ll_vibrate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/list_item_latest"
+        android:clickable="true"
+        android:focusable="true">
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/tv_notifications_vibrate"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vibrate"
+            android:textSize="18sp"
+            android:drawablePadding="30dp"
+            android:clickable="true"
+            android:checked="true"
+            android:focusable="true"
+            android:background="@drawable/list_item_latest"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:text="Vibrate on new notification"
+            android:paddingLeft="20dp"
+            android:paddingBottom="20dp"/>
+    </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logins"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/list_item_latest"
+            android:clickable="true"
+            android:focusable="true">
+        <TextView
+            android:id="@+id/tv_logout"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:drawablePadding="30dp"
+            android:clickable="true"
+            android:focusable="true"
+             />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:text="Logout"
+            android:paddingLeft="20dp"
+            android:paddingBottom="20dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

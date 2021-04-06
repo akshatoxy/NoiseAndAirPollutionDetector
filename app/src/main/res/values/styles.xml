@@ -4,8 +4,26 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="ProgressBarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorAccent">#000</item>
+    </style>
+
+    <style name="Theme.AppCompat.Light.DarkActionBar" parent="@style/Theme.AppCompat.Light">
+        <item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>
+    </style>
+
+    <style name="Widget.Styled.ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="titleTextStyle">@style/ActionBarTitleText</item>
+        <item name="background">@color/colorPrimary</item>
+    </style>
+
+    <style name="ActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+    <item name="android:textColor">@color/primary_text_action_bar</item>
     </style>
 
 </resources>

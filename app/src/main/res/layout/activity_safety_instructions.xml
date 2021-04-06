@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".SafetyInstructionsActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/foreground"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do's and Dont's"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Before an earthquake:"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="19sp"/>
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/before"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Follow and advocate local safe building codes for earthquake-resistant construction."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Make a plan and preparation for emergency relief."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Identify the medical centers, fire fighting stations, police posts and organize relief society of your area."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Know the electric and water shut off locations in your house."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Heavy objects, glasses, cutlery should be kept in lower shelves."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Flower pots should not be kept on the parapet."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="During an earthquake:"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="19sp"/>
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/during"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Keep calm and reassure others."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• During the event, the safest place is an open space, away from buildings."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• If you are indoors, take cover under a desk, table, bed or doorways and against inside walls and staircase. Stay away from glass doors, glass panes, windows or outside doors. Do not rush to go out of the building, to avoid the stampede."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• If you are outside, move away from buildings and utility wires."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• If you are in a moving vehicle, stop as quickly as possible and stay in the vehicle."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Free all pets and domestic animals so that they can run outside."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Do not use candles, matches or other open flames. Put out all fires."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="After an earthquake:"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="19sp"/>
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/after"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Keep stock of drinking water, foodstuff and first-aid equipment inaccessible place."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Do not spread and believe rumors."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Turn on your transistor or television to get the latest information/bulletins and aftershock warnings."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Provide help to others and develop confidence."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Attend the injured persons and give them aid, whatever is possible and also inform the hospital."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Be prepared for after shocks as these may strike."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Close the valve of kitchen gas stove, if it is on. If it is closed, do not open. Do not use open flames."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Do not operate electric switches or appliances, if gas leaks are suspected."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• Check water pipes, electric lines and fittings. If damaged, shut off the main valves. Do not touch live wires of electricity."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="• If needed, open doors and cup boards carefully as objects may fall."/>
+
+    </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

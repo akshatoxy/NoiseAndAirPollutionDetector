@@ -2,17 +2,21 @@ package com.example.eqdetector;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
-    private TextView mIcon;
+    private ImageView mIcon;
 
     private Animation zoomIn;
 
@@ -22,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
         getSupportActionBar().hide();
 
         zoomIn = AnimationUtils.loadAnimation(this,R.anim.zoom_in);
@@ -30,18 +35,30 @@ public class MainActivity extends AppCompatActivity {
 
         mIcon.setAnimation(zoomIn);
 
-        
-
 
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 // This method will be executed once the timer is over
-                Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(i);
-                finish();
+                Intent i;
+                SharedPreferences sharedPreferences = getSharedPreferences(LoginActivity.MY_PREFERENCE,MODE_PRIVATE);
+
+                Log.d("main-activity",sharedPreferences.getString(LoginActivity.LOGIN_PREF,"logged-out"));
+
+                if(sharedPreferences.getString(LoginActivity.LOGIN_PREF,"logged-out").equals("logged-out")) {
+                    i = new Intent(MainActivity.this, LoginActivity.class);
+                    nextActivity(i);
+                }else if(sharedPreferences.getString(LoginActivity.LOGIN_PREF,"logged-out").equals("logged-in")){
+                    i = new Intent(MainActivity.this, EarthquakeActivity.class);
+                    nextActivity(i);
+                }
             }
         }, 2000);
+    }
+
+    private void nextActivity(Intent i){
+        startActivity(i);
+        finish();
     }
 }
