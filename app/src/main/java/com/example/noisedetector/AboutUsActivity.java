@@ -1,4 +1,4 @@
-package com.example.eqdetector;
+package com.example.noisedetector;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;

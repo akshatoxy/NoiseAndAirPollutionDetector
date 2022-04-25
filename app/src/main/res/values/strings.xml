@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EQdetector</string>
+    <string name="app_name">NoiseDetector</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_sismos">Sismos</string>
     <string name="title_alerts">Alerts</string>

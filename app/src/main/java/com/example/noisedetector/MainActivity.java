@@ -1,8 +1,7 @@
-package com.example.eqdetector;
+package com.example.noisedetector;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -50,7 +48,7 @@ public class MainActivity extends AppCompatActivity{
                     i = new Intent(MainActivity.this, LoginActivity.class);
                     nextActivity(i);
                 }else if(sharedPreferences.getString(LoginActivity.LOGIN_PREF,"logged-out").equals("logged-in")){
-                    i = new Intent(MainActivity.this, EarthquakeActivity.class);
+                    i = new Intent(MainActivity.this, OptionsActivity.class);
                     nextActivity(i);
                 }
             }

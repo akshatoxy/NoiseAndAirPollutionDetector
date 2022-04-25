@@ -1,4 +1,4 @@
-package com.example.eqdetector;
+package com.example.noisedetector;
 
 import androidx.annotation.NonNull;
 
@@ -30,7 +30,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Void> {
 
-    private Button loginbtn;
+    private Button loginBtn;
     private TextView register;
     private TextInputEditText editTextEmail,editTextPassword;
     private FirebaseAuth mAuth;
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
 
         getSupportActionBar().hide();
 
-        loginbtn =(Button) findViewById(R.id.loginbtn);
+        loginBtn =(Button) findViewById(R.id.loginbtn);
         register =(TextView) findViewById(R.id.register);
         editTextEmail=findViewById(R.id.etEmail);
         editTextPassword=findViewById((R.id.etPassword)) ;
@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
 
         getSupportLoaderManager().initLoader(USER_LOGIN_LOADER, null, this);
 
-        loginbtn.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("Login-Activity","Login Button Clicked");
@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if((event.getAction() == KeyEvent.ACTION_DOWN) && (actionId == KeyEvent.KEYCODE_D)) {
                     Log.d("LoginActivity","done clicked");
-                    loginbtn.performClick();
+                    loginBtn.performClick();
                     return true;
                 }
                 return false;
@@ -150,7 +150,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
                     return;
                 }else {
                     Log.d("login-activity","inside onstart Loading");
-                    loginbtn.setClickable(false);
+                    loginBtn.setClickable(false);
                     getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                             WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                     progressBar.setVisibility(View.VISIBLE);
@@ -175,7 +175,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
                             Log.d("login-activity",sharedPreferences.getString(LOGIN_PREF,"logged-out"));
 
                             if(sharedPreferences.getString(LOGIN_PREF,"logged-out").equals("logged-in")) {
-                                Intent i = new Intent(LoginActivity.this, EarthquakeActivity.class);
+                                Intent i = new Intent(LoginActivity.this, OptionsActivity.class);
                                 startActivity(i);
                                 finish();
                             }
@@ -186,7 +186,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
                         }
                         progressBar.setVisibility(View.INVISIBLE);
                         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                        loginbtn.setClickable(true);
+                        loginBtn.setClickable(true);
                     }
                 });
                 return null;

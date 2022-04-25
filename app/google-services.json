@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "79630011886",
-    "firebase_url": "https://eqdetecter-9a95d.firebaseio.com",
-    "project_id": "eqdetecter-9a95d",
-    "storage_bucket": "eqdetecter-9a95d.appspot.com"
+    "project_number": "112583111551",
+    "firebase_url": "https://noisedetector-8d941-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "noisedetector-8d941",
+    "storage_bucket": "noisedetector-8d941.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:79630011886:android:2af28145074ded465b92ff",
+        "mobilesdk_app_id": "1:112583111551:android:6c45ec2f16f18b7ffbe04a",
         "android_client_info": {
-          "package_name": "com.example.eqdetector"
+          "package_name": "com.example.noisedetector"
         }
       },
       "oauth_client": [
         {
-          "client_id": "79630011886-97r120pmc558absbcek9bnhucgcrapru.apps.googleusercontent.com",
+          "client_id": "112583111551-c6r87ikmksksbranibjseeug86k261ub.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.noisedetector",
+            "certificate_hash": "e0ffa4bbbf42b009142467e04833bb0279f8a337"
+          }
+        },
+        {
+          "client_id": "112583111551-otjfepu5mm27mj8ukr9fbhgo2fih21fk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAdNrijPLpUZ9sq_jhhhHBlu-JswbutT-A"
+          "current_key": "AIzaSyDjGlGLdJ8CogWxjVF8nW8NPnzoC0wmwkM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "79630011886-97r120pmc558absbcek9bnhucgcrapru.apps.googleusercontent.com",
+              "client_id": "112583111551-otjfepu5mm27mj8ukr9fbhgo2fih21fk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

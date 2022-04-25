@@ -1,4 +1,4 @@
-package com.example.eqdetector.Services;
+package com.example.noisedetector.Services;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -16,8 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
-import com.example.eqdetector.BroadcastReciever.Restarter;
-import com.example.eqdetector.R;
+import com.example.noisedetector.BroadcastReciever.Restarter;
+import com.example.noisedetector.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -88,7 +88,7 @@ public class NotificationService extends Service {
                         if(valFloat > 0.092) {
                             String channelId = "Default";
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(NotificationService.this, channelId)
-                                    .setSmallIcon(R.drawable.ic_earthquake)
+                                    .setSmallIcon(R.drawable.ic_sound_wave)
                                     .setContentTitle("EqDetector")
                                     .setContentText(val).setAutoCancel(true);
                             NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);

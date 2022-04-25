@@ -1,4 +1,4 @@
-package com.example.eqdetector;
+package com.example.noisedetector;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,28 +8,41 @@ import androidx.loader.content.Loader;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.eqdetector.Models.User;
+import com.example.noisedetector.Models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener, LoaderManager.LoaderCallbacks<Void> {
 
     private FirebaseAuth mAuth;
     private TextView login ;
     private Button registerUser;
-    private EditText name, email, password, location;
+    private EditText name, email, password;
+    private AutoCompleteTextView location;
     private ProgressBar progressBar;
+    private ArrayList<String> cities, states;
 
     public static final int USER_REGISTER_LOADER = 33;
     @Override
@@ -48,10 +61,28 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         name = (EditText)findViewById(R.id.name);
         email = (EditText)findViewById(R.id.email);
         password = (EditText)findViewById(R.id.password);
-        location = (EditText)findViewById(R.id.location);
+        location = findViewById(R.id.location);
+
+        cities = new ArrayList<>();
+        states = new ArrayList<>();
 
         progressBar=(ProgressBar)findViewById(R.id.pb_loading_indicator_register);
         getSupportLoaderManager().initLoader(USER_REGISTER_LOADER,null,this);
+
+        try {
+            JSONArray arr = new JSONArray(loadJSONFromAsset());
+
+            for(int i=0; i<arr.length(); i++) {
+                JSONObject elem = (JSONObject) arr.get(i);
+                cities.add(elem.getString("name"));
+                states.add(elem.getString("state"));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        location.setThreshold(2);
+        location.setAdapter(new ArrayAdapter<String>(this, android.R.layout.select_dialog_item, cities));
     }
 
     @Override
@@ -131,6 +162,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
             @Override
             protected void onStartLoading() {
+                Log.d("Register", "Inside on start loading");
                 super.onStartLoading();
                 if(args == null){
                     return;
@@ -152,7 +184,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
                                     User user= new User(name1,email1,location1);
-                                    FirebaseDatabase.getInstance().getReference("Users")
+                                    Log.d("Register", FirebaseAuth.getInstance().getCurrentUser().getUid() + " " + FirebaseDatabase.getInstance().getReference("users") + " " + user);
+                                    FirebaseDatabase.getInstance("https://noisedetector-8d941-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("users")
                                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
@@ -164,11 +197,15 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                                 startActivity(i);
                                                 finish();
                                             }else {
+                                                Log.d("Register", task.getException().toString());
+                                                progressBar.setVisibility(View.INVISIBLE);
                                                 Toast.makeText(RegisterUser.this,"Failed to register ! Try again",Toast.LENGTH_LONG).show();
                                             }
                                         }
                                     });
                                 }else {
+                                    Log.d("Register", task.getException().toString());
+                                    progressBar.setVisibility(View.INVISIBLE);
                                     Toast.makeText(RegisterUser.this,"Failed to register ! Try again",Toast.LENGTH_LONG).show();
                                 }
                             }
@@ -186,5 +223,21 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onLoaderReset(Loader<Void> loader) {
 
+    }
+
+    public String loadJSONFromAsset() {
+        String json = null;
+        try {
+            InputStream is = getAssets().open("cities.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
     }
 }

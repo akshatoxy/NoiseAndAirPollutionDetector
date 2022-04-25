@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.eqdetector">
+    package="com.example.noisedetector">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -12,16 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SafetyInstructionsActivity"></activity>
-        <activity android:name=".EarthquakeActivity" />
-        <activity android:name=".AboutUsActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".SismosActivity" />
-        <activity android:name=".RegisterUser" />
+        <activity android:name="com.example.noisedetector.NoisePollutionActivity" />
+        <activity android:name="com.example.noisedetector.AirPollutionActivity" />
+        <activity android:name="com.example.noisedetector.OptionsActivity" />
+        <activity android:name="com.example.noisedetector.AboutUsActivity" />
+        <activity android:name="com.example.noisedetector.SettingsActivity" />
+        <activity android:name="com.example.noisedetector.RegisterUser" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.noisedetector.LoginActivity"
             android:label="home" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.noisedetector.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,7 @@
         </activity>
 
         <receiver
-            android:name=".BroadcastReciever.Restarter"
+            android:name="com.example.noisedetector.BroadcastReciever.Restarter"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -39,14 +39,14 @@
         </receiver>
 
         <service
-            android:name=".Services.MyFirebaseMessagingService"
+            android:name="com.example.noisedetector.Services.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
         <service
-            android:name=".Services.NotificationService"
+            android:name="com.example.noisedetector.Services.NotificationService"
             android:enabled="true"
             android:exported="false" />
 
@@ -58,7 +58,7 @@
             android:value="false" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_earthquake" />
+            android:resource="@drawable/ic_sound_wave" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />

@@ -1,4 +1,4 @@
-package com.example.eqdetector;
+package com.example.noisedetector;
 
 import android.content.Context;
 

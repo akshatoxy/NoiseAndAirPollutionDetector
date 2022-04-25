@@ -1,4 +1,4 @@
-package com.example.eqdetector.BroadcastReciever;
+package com.example.noisedetector.BroadcastReciever;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.eqdetector.Services.NotificationService;
+import com.example.noisedetector.Services.NotificationService;
 
 public class Restarter extends BroadcastReceiver {
     @Override

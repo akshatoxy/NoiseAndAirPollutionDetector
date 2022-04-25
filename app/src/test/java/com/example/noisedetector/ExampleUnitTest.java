@@ -1,4 +1,4 @@
-package com.example.eqdetector;
+package com.example.noisedetector;
 
 import org.junit.Test;
 

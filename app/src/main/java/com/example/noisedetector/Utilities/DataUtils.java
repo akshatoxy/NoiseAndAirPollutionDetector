@@ -1,9 +1,9 @@
-package com.example.eqdetector.Utilities;
+package com.example.noisedetector.Utilities;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.example.eqdetector.R;
+import com.example.noisedetector.R;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
